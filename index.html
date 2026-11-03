@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Turbo Ragdoll</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- ===================== SCREENS ===================== -->
+  <div id="menuScreen" class="screen">
+    <div class="screen-inner">
+      <h1>TURBO<br><span>RAGDOLL</span></h1>
+      <p>Chegue o mais longe possível sem morrer!</p>
+      <div class="controls-hint">
+        <div>← → Acelerar / Freiar</div>
+        <div>↑ ↓ Inclinar</div>
+      </div>
+      <button id="playBtn" class="btn btn-primary">▶ JOGAR</button>
+    </div>
+  </div>
+
+  <div id="deadScreen" class="screen hidden">
+    <div class="screen-inner">
+      <h1>VOCÊ<br><span>MORREU!</span></h1>
+      <p id="distanceDisplay">Distância: 0m</p>
+      <p id="reasonDisplay"></p>
+      <button id="restartBtn" class="btn btn-danger">↺ REINICIAR</button>
+    </div>
+  </div>
+
+  <!-- ===================== HUD ===================== -->
+  <div id="hud" class="hidden">
+    <div id="speedDisplay">0 km/h</div>
+    <div id="distHud">0m</div>
+  </div>
+
+  <!-- ===================== TOUCH CONTROLS ===================== -->
+  <div id="touchControls" class="hidden">
+    <div id="tc-left">
+      <button class="tc-btn" id="btnLeft">&#9664;</button>
+      <button class="tc-btn" id="btnRight">&#9654;</button>
+    </div>
+    <div id="tc-right">
+      <button class="tc-btn" id="btnLeanBack">&#8635;</button>
+      <button class="tc-btn" id="btnLeanFwd">&#8634;</button>
+    </div>
+  </div>
+
+  <!-- Matter.js via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
